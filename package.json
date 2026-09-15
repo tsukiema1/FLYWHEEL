@@ -1,0 +1,16 @@
+{
+  "name": "flywheel-connectome-trader",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A connectome-gated paper trading simulator for Robinhood Chain.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "simulate": "node cli.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

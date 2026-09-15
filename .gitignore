@@ -1,0 +1,8 @@
+.env
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+fly-data/
+paper-ledger.jsonl
+.DS_Store

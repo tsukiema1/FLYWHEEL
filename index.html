@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FLYWHEEL is a connectome-gated paper trading simulator for Robinhood Chain." />
+    <meta name="theme-color" content="#070907" />
+    <title>FLYWHEEL · Connectome Market Engine</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="FLYWHEEL home">
+        <svg viewBox="0 0 56 38" aria-hidden="true"><path d="M28 19C19 8 9 6 3 11c7 1 10 5 12 10-7 1-10 5-11 10 10 1 18-3 24-12Zm0 0C37 8 47 6 53 11c-7 1-10 5-12 10 7 1 10 5 11 10-10 1-18-3-24-12Z"/><circle cx="28" cy="17" r="4"/><path d="M28 21v14M24 28h8"/></svg>
+        <span><strong>FLYWHEEL</strong><small>connectome market engine</small></span>
+      </a>
+      <div class="network"><span class="pulse"></span><span>SIMULATION</span><i>/</i><span>ROBINHOOD CHAIN 4663</span></div>
+      <a class="github" href="https://github.com/tsukiema1/flywheel" target="_blank" rel="noreferrer">SOURCE ↗</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">166,700-neuron connectome compatible / one deterministic risk gate</p>
+          <h1>The market moves.<br /><em>The fly decides.</em></h1>
+          <p class="intro">Market momentum and wallet conviction enter a biological circuit. A descending spike may propose a trade. Pure code decides whether it reaches the paper broker.</p>
+          <div class="controls">
+            <button id="step-button">Advance 20 seconds <span>↳</span></button>
+            <button class="secondary" id="auto-button">Start loop</button>
+          </div>
+          <p class="disclaimer">Paper simulation only. No wallet, signer, or transaction broadcaster exists in this build.</p>
+        </div>
+
+        <div class="brain-stage">
+          <div class="stage-header"><span>LIVE NEURAL TRACE</span><span id="brain-mode">SURROGATE MODE</span></div>
+          <canvas id="brain-canvas" width="720" height="430" aria-label="Animated neural activity"></canvas>
+          <div class="circuit-labels"><span>LC4</span><span>LPLC2</span><span>DNp01</span><span>DNa02</span></div>
+          <div class="stage-readout"><span>DESCENDING DRIVE</span><strong id="drive-value">0.000</strong><b id="spike-state">NO SPIKE</b></div>
+        </div>
+      </section>
+
+      <section class="tape" aria-label="Current market signal">
+        <div><span>TICK</span><strong id="tick">000</strong></div>
+        <div><span>ASSET</span><strong id="symbol">WAITING</strong></div>
+        <div><span>5M CHANGE</span><strong id="change">0.00%</strong></div>
+        <div><span>CONVICTION</span><strong id="conviction">0.0</strong></div>
+        <div><span>AVG SCORE</span><strong id="score">0</strong></div>
+        <div><span>LIQUIDITY</span><strong id="liquidity">$0</strong></div>
+      </section>
+
+      <section class="workbench">
+        <article class="signal-panel panel">
+          <div class="panel-title"><span>01 / SENSORY ENCODER</span><b id="encoder-state">IDLE</b></div>
+          <div class="channel" data-channel="LC4"><div><span>LC4 looming</span><small>price velocity</small></div><meter min="0" max="1" value="0" id="lc4"></meter><strong id="lc4-value">0.000</strong></div>
+          <div class="channel" data-channel="LPLC2"><div><span>LPLC2 object</span><small>momentum × conviction</small></div><meter min="0" max="1" value="0" id="lplc2"></meter><strong id="lplc2-value">0.000</strong></div>
+          <div class="channel" data-channel="dopamine"><div><span>Dopamine gate</span><small>flow reputation</small></div><meter min="0" max="1" value="0" id="dopamine"></meter><strong id="dopamine-value">0.000</strong></div>
+          <div class="logic-line"><span>rising</span><b id="rising">FALSE</b><span>strong flow</span><b id="flow">FALSE</b><span>liquidity</span><b id="liq-gate">FALSE</b></div>
+        </article>
+
+        <article class="risk-panel panel">
+          <div class="panel-title"><span>02 / HARD RISK GATE</span><b id="risk-state">WAITING</b></div>
+          <div class="checks" id="checks">
+            <div><span>Trade size</span><small>≤ $500</small><b>···</b></div><div><span>Position weight</span><small>1% meme / 15% stock</small><b>···</b></div><div><span>Slippage</span><small>≤ 0.80%</small><b>···</b></div><div><span>Asset type</span><small>explicit allowlist</small><b>···</b></div><div><span>Daily loss</span><small>&lt; $750</small><b>···</b></div><div><span>Approval</span><small>required above $500</small><b>···</b></div>
+          </div>
+        </article>
+
+        <article class="verdict-panel panel">
+          <div class="panel-title"><span>03 / VERDICT</span><b>PAPER ONLY</b></div>
+          <div class="verdict-mark" id="verdict-mark"><span>AWAITING INPUT</span><strong id="verdict">DORMANT</strong><small id="verdict-detail">Advance the tape to begin</small></div>
+          <div class="portfolio"><div><span>START</span><strong>$500.00</strong></div><div><span>CURRENT</span><strong id="portfolio-value">$500.00</strong></div><div><span>P&amp;L</span><strong id="pnl">$0.00</strong></div></div>
+        </article>
+      </section>
+
+      <section class="ledger-section">
+        <div class="section-head"><div><p>APPEND-ONLY SIMULATION RECORD</p><h2>Every impulse leaves a trace.</h2></div><span id="event-count">0 EVENTS</span></div>
+        <div class="ledger-wrap"><table><thead><tr><th>ID</th><th>INPUT</th><th>NEURAL</th><th>RISK</th><th>VERDICT</th><th>PORTFOLIO</th></tr></thead><tbody id="ledger"><tr class="empty"><td colspan="6">No events recorded. The loop is dormant.</td></tr></tbody></table></div>
+      </section>
+
+      <section class="architecture">
+        <div class="section-head"><div><p>ARCHITECTURE</p><h2>Biology proposes. Code disposes.</h2></div><a href="docs/ARCHITECTURE.md">READ THE SPEC ↗</a></div>
+        <div class="architecture-flow"><div><span>01</span><strong>Radar adapter</strong><small>fixture now, documented API later</small></div><i>→</i><div><span>02</span><strong>Market encoder</strong><small>price and wallet conviction</small></div><i>→</i><div><span>03</span><strong>Fly circuit</strong><small>surrogate or MaleCNS bridge</small></div><i>→</i><div><span>04</span><strong>Risk policy</strong><small>six deterministic checks</small></div><i>→</i><div class="sealed"><span>05</span><strong>Paper broker</strong><small>live execution absent</small></div></div>
+      </section>
+    </main>
+
+    <footer><div><strong>FLYWHEEL</strong><span>v0.1.0</span></div><p>Experimental software. Simulated results are not evidence of future performance. Not financial advice.</p><a href="https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/" target="_blank" rel="noreferrer">CONNECTOME CREDIT ↗</a></footer>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

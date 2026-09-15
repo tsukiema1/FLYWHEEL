@@ -1,0 +1,25 @@
+{
+  "network": {
+    "name": "Robinhood Chain",
+    "chainId": 4663,
+    "rpcUrl": "https://rpc.mainnet.chain.robinhood.com",
+    "explorerUrl": "https://robinhoodchain.blockscout.com"
+  },
+  "loopIntervalMs": 20000,
+  "signal": {
+    "minimumChange5m": 0.02,
+    "minimumConviction": 5,
+    "minimumAverageScore": 74,
+    "minimumLiquidityUsd": 40000,
+    "maximumLiquidityUsd": 150000
+  },
+  "risk": {
+    "maxTradeUsd": 500,
+    "maxMemePositionWeight": 0.01,
+    "maxStockPositionWeight": 0.15,
+    "maxSlippage": 0.008,
+    "maxDailyLossUsd": 750,
+    "allowedAssetTypes": ["STOCK_TOKEN", "PONS_TOKEN"],
+    "requireHumanApprovalAboveUsd": 500
+  }
+}
